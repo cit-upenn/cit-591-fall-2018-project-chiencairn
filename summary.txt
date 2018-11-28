@@ -3,8 +3,12 @@ Project Description
 
 Work Breakdown
 Michelle Chien
-
+ - Parking Availability Parsing
+ - Parking Rates Parsing
 Graham Pitcairn
+ - Crime Incidents Parsing
+ - Litter Incident Parsing
 
+Test Change
 github Repository
 Insert Link
