@@ -44,18 +44,18 @@ public class LitterParser {
 		    	
 		    	if(s.startsWith("\"")) {
 			    	litterId = Integer.parseInt(list[2]);
-			    	longitude = -1.0 * Double.parseDouble(list[13]);	//Has to be multiplied by -1 to correct for negative longitude (Used to imply "West")
+			    	longitude = Double.parseDouble(list[13]);
 			    	latitude = Double.parseDouble(list[12]);		    		
 		    	} else {
 			    	litterId = Integer.parseInt(list[1]);
-			    	longitude = -1.0 * Double.parseDouble(list[12]);	//Has to be multiplied by -1 to correct for negative longitude (Used to imply "West")
+			    	longitude = Double.parseDouble(list[12]);	
 			    	latitude = Double.parseDouble(list[11]);
 		    	}
 	    		/**
 	    		 * Produces an instance of the Litter class with inputs produced and parsed from the text file.
 	    		 */
 		    	Litter newLitter = new Litter(litterId, latitude, longitude);
-		    	litter.add(newLitter);
+		    	litter.add(newLitter); 
 		    }
 		    
 		    scan.close();

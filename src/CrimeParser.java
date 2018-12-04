@@ -1,7 +1,11 @@
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Scanner;
 
 public class CrimeParser {
@@ -42,19 +46,29 @@ public class CrimeParser {
 		    	String offense;
 		    	double longitude;
 		    	double latitude;
+		    	Calendar eventDate;
 		    	
 		    	if(s.matches("^\\d.*") && list[13].matches("^-.*")) {
 		    		
 			    	crimeId = Integer.parseInt(list[2]);
 			    	offense = list[12];
-			    	longitude = -1.0 * Double.parseDouble(list[13]);	//Has to be multiplied by -1 to correct for negative longitude (Used to imply "West")
+			    	longitude = Double.parseDouble(list[13]);	
 			    	latitude = Double.parseDouble(list[14]);
+			    	
+			    	String eventDateString = list[5];
+			    	DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd");
+			    	eventDate = Calendar.getInstance();
+			    	Date d1 = df1.parse(eventDateString.replaceAll("\"",""));
+			    	eventDate.setTime(d1);			    	
 		    		
 		    		/**
 		    		 * Produces an instance of the Trip class with inputs produced and parsed from the text file.
 		    		 */
-			    	Crime newCrime = new Crime(crimeId, offense, latitude, longitude);
-			    	crimes.add(newCrime);
+			    	Crime newCrime = new Crime(crimeId, offense, latitude, longitude, eventDate);
+			    	if(newCrime.getEventDate().get(Calendar.YEAR)>2015) {
+			    		crimes.add(newCrime);
+			    	}
+			    	
 		    	} 
 		    	
 		    }

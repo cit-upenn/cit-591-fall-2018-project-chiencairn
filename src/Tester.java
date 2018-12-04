@@ -30,7 +30,7 @@ public class Tester {
 			 * Port Richmond: 40.007622, -75.161062 crimeRating: 43 litterRating: 70
 			 * Rawnhurst: 40.058409, -75.057235 crimeRating: 96 litterRating: 92
 			 */
-			DataAnalyzer da = new DataAnalyzer(crimes, litter, 40.007622, -75.161062);
+			DataAnalyzer da = new DataAnalyzer(crimes, litter, 39.988791, -75.147774);
 			System.out.println(da.getCrimeRating());
 			System.out.println(da.getLitterRating());
 		} catch (ParseException e) {

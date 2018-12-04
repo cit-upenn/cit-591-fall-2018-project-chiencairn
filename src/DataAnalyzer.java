@@ -65,7 +65,7 @@ public class DataAnalyzer {
 		}
 		System.out.println("This position litter tally: "+litterTally);
 		double avgLitterRate = litter.size()/areaOfPhilly;
-		System.out.println("Average crime rate (litter/m^2): "+avgLitterRate);
+		System.out.println("Average litter rate (litter/m^2): "+avgLitterRate);
 		litterRating = 100 - 15*(litterTally/avgLitterRate);
 		return ((int)litterRating);
 		
