@@ -4,11 +4,10 @@ Project Description
 Work Breakdown
 Michelle Chien
  - Parking Availability Parsing
- - Parking Rates Parsing
+ - School Data Parsing
 Graham Pitcairn
  - Crime Incidents Parsing
  - Litter Incident Parsing
 
-Test Delete
 github Repository
-Insert Link
+https://github.com/cit-upenn/cit-591-fall-2018-project-chiencairn
