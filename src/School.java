@@ -2,18 +2,18 @@
 public class School {
 	private String name;
 	private int id;
-	private double xCoord;
-	private double yCoord;
+	private double lng;
+	private double lat;
 	private String gradeLevels;
 	private int enrollment;
 	private String type;
 	private double score;
 	
-	public School(String name, double xCoord, double yCoord) {
+	public School(String name, double lat, double lng) {
 		this.name = name;
 		this.id = -1;
-		this.xCoord = xCoord;
-		this.yCoord = yCoord;
+		this.lat = lat;
+		this.lng = lng;
 		this.gradeLevels  = "";
 		this.enrollment = -1;
 		this.type = "";
@@ -24,18 +24,13 @@ public class School {
 		return name;
 	}
 
-
-
-	public double getxCoord() {
-		return xCoord;
+	public double getLng() {
+		return lng;
 	}
 
-
-
-	public double getyCoord() {
-		return yCoord;
+	public double getLat() {
+		return lat;
 	}
-
 
 
 	public int getId() {
@@ -79,7 +74,7 @@ public class School {
 	}
 	
 	public String toString() {
-		String s = name + "|" + xCoord + "|" + yCoord  + "|" + id  + "|" +  gradeLevels  + "|" + enrollment  + "|" + type  + "|" + score;
+		String s = name + "|" + lat + "|" + lng  + "|" + id  + "|" +  gradeLevels  + "|" + enrollment  + "|" + type  + "|" + score;
 		return s;
 	}
 }
