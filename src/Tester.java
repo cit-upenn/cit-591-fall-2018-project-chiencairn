@@ -7,7 +7,7 @@ public class Tester {
 		CrimeParser crim;
 		try {
 			lit = new LitterParser("litter_index_survey.csv");
-			crim = new CrimeParser("incidents_part1_part2 (1).csv");
+			crim = new CrimeParser("Crime_incidents.csv");
 			
 			ArrayList<Litter> litter = lit.getLitter();
 			ArrayList<Crime> crimes = crim.getCrimes();
@@ -29,10 +29,13 @@ public class Tester {
 			 * Kensington: 39.988791, -75.147774 crimeRating: 25 litterRating: 15
 			 * Port Richmond: 40.007622, -75.161062 crimeRating: 43 litterRating: 70
 			 * Rawnhurst: 40.058409, -75.057235 crimeRating: 96 litterRating: 92
+			 * Tioga/Nicetown: 40.008446, -75.161225 crimeRating: 46 litterRating: 74
+			 * Center City: 39.952345, -75.164493 crimeRating: 11 litterRating: 80
 			 */
-			DataAnalyzer da = new DataAnalyzer(crimes, litter, 39.988791, -75.147774);
-			System.out.println(da.getCrimeRating());
-			System.out.println(da.getLitterRating());
+
+			DataAnalyzer da = new DataAnalyzer(crimes, litter, 39.952345, -75.164493);
+			System.out.println("This position crime rating: "+da.getCrimeRating());
+			System.out.println("This position litter rating: "+da.getLitterRating());
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

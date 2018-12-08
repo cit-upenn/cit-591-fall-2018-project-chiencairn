@@ -1,13 +1,34 @@
 Project Description
-4-5 sentence description
+It's always best to have information about a community before you move there! The Community Rating program can help you, 
+whether you are moving or just curious how your neighborhood measures up to the rest of Philadelphia. This program will 
+provide you with details about the availability of schools,  proximity of parking, volume of litter, and prominence of crime. 
+
+After running the program, you enter the address that you are interested in and click: "Rate my address!"
+
+The program will, with a brief delay to compare the data for your area, provide you with an overall rating as well as 
+individual category ratings.
 
 Work Breakdown
 Michelle Chien
  - Parking Availability Parsing
+ - Parking rating calculation
  - School Data Parsing
+ - School rating calculation
+ - JxMaps Window
+ - Geocode to return lat/long
+ 
 Graham Pitcairn
  - Crime Incidents Parsing
  - Litter Incident Parsing
+ - Crime rating calculation
+ - Litter rating calculation
+ - GUI framing
+ - Button Listener
+ - Overall rating calculation
 
 github Repository
 https://github.com/cit-upenn/cit-591-fall-2018-project-chiencairn
+
+Resources
+JxMaps Starter Code
+http://jxmaps-support.teamdev.com/documentation/jxmaps-quick-start-guide

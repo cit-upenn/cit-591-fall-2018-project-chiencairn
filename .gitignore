@@ -25,6 +25,12 @@ Google
 #All .csv files
 *.csv
 
+#HelloWorld Example
+HelloWorld.java
+
+#All .jar files
+*.jar
+
 # Locally stored "Eclipse launch configurations"
 *.launch
 

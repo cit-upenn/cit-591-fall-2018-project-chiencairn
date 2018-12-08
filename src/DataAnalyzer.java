@@ -45,7 +45,7 @@ public class DataAnalyzer {
 		System.out.println("This position crime tally: "+crimeTally);
 		double avgCrimeRate = crimes.size()/areaOfPhilly;
 		System.out.println("Average crime rate (crimes/m^2): "+avgCrimeRate);
-		crimeRating = 100 - 20*(crimeTally/avgCrimeRate)*(crimeTally/avgCrimeRate);
+		crimeRating = 100 - 15*(crimeTally/avgCrimeRate);
 		return ((int)crimeRating);
 		
 	}
@@ -63,9 +63,9 @@ public class DataAnalyzer {
 				litterTally++;
 			}
 		}
-		System.out.println("This position litter tally: "+litterTally);
+		//System.out.println("This position litter tally: "+litterTally);
 		double avgLitterRate = litter.size()/areaOfPhilly;
-		System.out.println("Average litter rate (litter/m^2): "+avgLitterRate);
+		//System.out.println("Average litter rate (litter/m^2): "+avgLitterRate);
 		litterRating = 100 - 15*(litterTally/avgLitterRate);
 		return ((int)litterRating);
 		

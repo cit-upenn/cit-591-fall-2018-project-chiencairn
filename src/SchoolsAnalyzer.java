@@ -16,7 +16,9 @@ public class SchoolsAnalyzer {
 		double qualityCount = 0;
 		double quantity = 0;
 		for(School s: schools) {
+			//System.out.println(s.getName());
 			if (isClose(.007, s.getLat(), s.getLng(), lat, lng)) {
+				//System.out.println("isclose");
 				quantity++;
 				if (s.getScore() > 0) {
 					quality += s.getScore();
@@ -24,6 +26,7 @@ public class SchoolsAnalyzer {
 				}
 			}	
 		}
+		//System.out.println(quality + "|" + qualityCount + "|" + quantity);
 		double score = (quality/qualityCount)*.6 + (quantity/35)*100*.4;
 		return score;
 	}
