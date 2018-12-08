@@ -1,3 +1,4 @@
+import java.util.Calendar;
 
 public class Crime {
 
@@ -6,6 +7,7 @@ public class Crime {
 	private String offense;
 	private double latitude;
 	private double longitude;
+	private Calendar eventDate;
 	
 	/**
 	 * The Crime constructor instantiates a single crime base on the arguments of crimeId, offense, latitude, and longitude.
@@ -14,11 +16,12 @@ public class Crime {
 	 * @param latitude
 	 * @param longitude
 	 */
-	Crime(int crimeId, String offense, double latitude, double longitude) {
+	Crime(int crimeId, String offense, double latitude, double longitude, Calendar eventDate) {
 		this.crimeId = crimeId;
 		this.offense = offense;
 		this.latitude = latitude;
 		this.longitude = longitude;
+		this.eventDate = eventDate;
 	}
 	/**
 	 * The getCrimeId method allows for accessing a single incident by an integer identifier.
@@ -47,6 +50,14 @@ public class Crime {
 	 */
 	public double getLongitude() {
 		return longitude;
+	}
+	
+	/**
+	 * The getEventDate method allows for accessing an incidents date as a Calendar object
+	 * @return eventDate
+	 */
+	public Calendar getEventDate() {
+		return eventDate;
 	}
 	
 }
