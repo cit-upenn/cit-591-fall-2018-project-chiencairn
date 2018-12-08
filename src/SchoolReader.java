@@ -21,8 +21,8 @@ public class SchoolReader {
 		scan.useDelimiter(",|\n"); //use comma and line delimiter
 		scan.nextLine(); //skip header in file
 		while (scan.hasNext()) {
-			double x = Double.parseDouble(scan.next());
-			double y = Double.parseDouble(scan.next());
+			double lng = Double.parseDouble(scan.next());
+			double lat = Double.parseDouble(scan.next());
 			scan.next(); //skip object ID
 			scan.next(); //skip AUN
 			int id = ParserHelper.processInt(scan.next());
@@ -36,7 +36,7 @@ public class SchoolReader {
 			int enrollment = ParserHelper.processInt(scan.next());
 			String type = scan.next();
 			scan.next(); //skip type specific
-			School current = new School(name, x, y);
+			School current = new School(name, lat, lng);
 			current.setId(id);
 			current.setEnrollment(enrollment);
 			current.setGradeLevels(grades);
