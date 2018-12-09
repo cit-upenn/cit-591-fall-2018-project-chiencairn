@@ -1,11 +1,14 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import org.json.JSONException;
 
 public class ButtonClickListener implements ActionListener {
 
@@ -43,8 +46,23 @@ public class ButtonClickListener implements ActionListener {
 		//now change the text on the label
 		label.setText("Computing Rating");
 		address = textField.getText();
-		double lng = -75.165222;
-		double lat = 39.952583;
+		GeocodeAPI geocoder = new GeocodeAPI();
+		String jsonResponse;
+		double lng = 0;
+		double lat = 0;
+		try {
+			jsonResponse = geocoder.makeAPICall(address);
+			GeocodeLocation location = geocoder.parseGeoCodeJSON(jsonResponse);
+			lng = location.getLng();
+			lat = location.getLat();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		try {
 			lit = new LitterParser("litter_index_survey.csv");
 			crim = new CrimeParser("Crime_incidents.csv");
