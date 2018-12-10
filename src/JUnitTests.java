@@ -83,21 +83,53 @@ class JUnitTests {
 	}
 	
 	@Test
-	//Test Purpose: tests file read functionality and building of Litter Array
+	//Test Purpose: tests file read functionality and building of School Array
 	public void testReadSchoolsFile() throws FileNotFoundException {
 		System.out.println("Running testReadSchoolsFile");
 		assertEquals(schoolReader.readSchoolFile().size(), 547);	
 	}	
 	
 	@Test
-	//Test Purpose: tests file read functionality and building of Litter Array
+	//Test Purpose: tests file read functionality and building of Permit Blocks Array
 	public void testReadPermitBlocksFile() throws FileNotFoundException {
 		System.out.println("Running testReadPermitBlocksFile");
 		assertEquals(parkingReader.readPermitBlockFile().size(), 1342);	
 	}	
 	
 	@Test
-	//Test Purpose: tests file read functionality and building of Litter Array
+	//Test Purpose: tests parking score functionality when a non-Philly area location is entered
+	public void testPermitBlocksAnalyzerZero() throws FileNotFoundException {
+		System.out.println("Running testPermitBlocksReaderZero");
+		PermitBlocksAnalyzer parkingAnalyzer = new PermitBlocksAnalyzer(parkingReader.readPermitBlockFile(), 0 , 0);
+		assertEquals((int)parkingAnalyzer.getParkingScore(), 0);	
+	}
+	
+	@Test
+	//Test Purpose: tests parking score functionality when a valid Philly area location is entered
+	public void testPermitBlocksAnalyzerValid() throws FileNotFoundException {
+		System.out.println("Running testPermitBlocksReaderValid");
+		PermitBlocksAnalyzer parkingAnalyzer = new PermitBlocksAnalyzer(parkingReader.readPermitBlockFile(), 39.945712 , -75.183454);
+		assertEquals((int)parkingAnalyzer.getParkingScore(), 93);	
+	}
+
+	@Test
+	//Test Purpose: tests schools score functionality when a non-Philly area location is entered
+	public void testSchoolsAnalyzerZero() throws FileNotFoundException {
+		System.out.println("Running testSchoolsZero");
+		SchoolsAnalyzer schoolAnalyzer = new SchoolsAnalyzer(schoolReader.readSchoolFile(), 0 , 0);
+		assertEquals((int)schoolAnalyzer.getSchoolScore(), 0);	
+	}
+	
+	@Test
+	//Test Purpose: tests schools score functionality when a valid Philly area location is entered
+	public void testSchoolssAnalyzerValid() throws FileNotFoundException {
+		System.out.println("Running testSchoolsReaderValid");
+		SchoolsAnalyzer schoolAnalyzer = new SchoolsAnalyzer(schoolReader.readSchoolFile(), 39.945712 , -75.183454);
+		assertEquals((int)schoolAnalyzer.getSchoolScore(), 36);	
+	}
+	
+	@Test
+	//Test Purpose: tests JSON parser to make sure correct latitude is brought back from Google Geocoder
 	public void testGeocodeAPILat() throws IOException, JSONException {
 		System.out.println("Running testGeocodeAPILat");
 		String address = "2606 South St, Philadelphia, PA";
@@ -108,7 +140,7 @@ class JUnitTests {
 	}
 	
 	@Test
-	//Test Purpose: tests file read functionality and building of Litter Array
+	//Test Purpose: tests JSON parser to make sure correct longitude is brought back from Google Geocoder
 	public void testGeocodeAPILng() throws IOException, JSONException {
 		System.out.println("Running testGeocodeAPILng");
 		String address = "2606 South St, Philadelphia, PA";
@@ -116,6 +148,6 @@ class JUnitTests {
 		String jsonResponse =  geocoder.makeAPICall(address);
 		GeocodeLocation location = geocoder.parseGeoCodeJSON(jsonResponse);
 		assertEquals(location.getLng(), -75.183454);	
-	}	
-
+	}
+	
 }
