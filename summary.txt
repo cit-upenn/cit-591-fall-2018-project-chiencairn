@@ -32,3 +32,9 @@ https://github.com/cit-upenn/cit-591-fall-2018-project-chiencairn
 Resources
 JxMaps Starter Code
 http://jxmaps-support.teamdev.com/documentation/jxmaps-quick-start-guide
+
+Data Sources
+Crime: https://www.opendataphilly.org/dataset/crime-incidents/resource/c57a9de2-e300-468a-9a20-3e64e5b9b2da
+Schools: 
+Litter: https://www.opendataphilly.org/dataset/litter-index/resource/6ad330ce-c233-47ff-a574-01b6553c7794
+Permit Parking: https://www.opendataphilly.org/dataset/residential-parking-permit-blocks/resource/c0e31693-7615-48bd-82e4-786dcab93129 
