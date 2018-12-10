@@ -2,22 +2,26 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.text.ParseException;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class JUnitTests {
 	LitterParser litterParser;
 	CrimeParser crimeParser;
 	
-	@Test
+	@BeforeEach
 	public void setUp() throws ParseException {
 		litterParser =new LitterParser("litter_index_survey.csv");
 		crimeParser =new CrimeParser("Crime_incidents.csv");
 	}
 	
+	@Test
 	//Test Purpose: tests file read functionality and building of Litter Array
 	public void testReadLitterFile() throws ParseException {
 		System.out.println("Running testReadLitterFile");
 		litterParser.readLitterFile();
+		System.out.println(litterParser.getLitter().size());
 		assertEquals(litterParser.getLitter().size(), 49474);	
 	}	
 	

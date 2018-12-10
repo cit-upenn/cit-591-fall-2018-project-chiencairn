@@ -18,8 +18,12 @@ public class PermitBlocksAnalyzer {
 				parkingCount++;
 			}
 		}
-	
-		return (parkingCount/70)*100;
+		parkingCount = parkingCount/1.5;
+		if(parkingCount > 100) {
+			return 100;
+		} else {
+		return parkingCount;
+		}
 	}
 	
 	public boolean isClose(double threshold, double startLat, double startLong, double endLat, double endLong) {
