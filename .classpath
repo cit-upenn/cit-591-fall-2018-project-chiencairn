@@ -2,9 +2,10 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="/Users/grahampitcairn/eclipse-workspace/HW6/license.jar"/>
-	<classpathentry kind="lib" path="/Users/grahampitcairn/eclipse-workspace/HW6/jxmaps-1.3.1/lib/jxmaps-1.3.1.jar"/>
-	<classpathentry kind="lib" path="/Users/grahampitcairn/eclipse-workspace/HW6/jxmaps-1.3.1/lib/jxmaps-mac-1.3.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="/Users/michellechien/Projects/java-json.jar"/>
+	<classpathentry kind="lib" path="/Users/michellechien/Projects/license.jar"/>
+	<classpathentry kind="lib" path="/Users/michellechien/Projects/jxmaps-1.3.1/lib/jxmaps-1.3.1.jar"/>
+	<classpathentry kind="lib" path="/Users/michellechien/Projects/jxmaps-1.3.1/lib/jxmaps-mac-1.3.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

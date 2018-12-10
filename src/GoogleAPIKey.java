@@ -4,7 +4,10 @@
  *
  */
 public class GoogleAPIKey {
-	final static String key = "KEY_HERE";
+	final static String key = "YOUR_KEY_HERE";
 	final static String startURL = "https://maps.googleapis.com/maps/api/geocode/json?address=";
 	final static String endURL = "&key=" + key;
 }
+
+
+

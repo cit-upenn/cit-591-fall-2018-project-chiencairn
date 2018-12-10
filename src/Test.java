@@ -33,8 +33,8 @@ public class Test {
 			System.out.println(schools.get(i).toString());
 		}
 		
-		double lng = -75.180599;
-		double lat = 39.937157;
+		double lng = -75.183454;
+		double lat = 39.945712;
 		
 		SchoolsAnalyzer schoolAnalysis = new SchoolsAnalyzer(schools, lat, lng);
 		PermitBlocksAnalyzer blockAnalysis = new PermitBlocksAnalyzer(blocks, lat, lng);
