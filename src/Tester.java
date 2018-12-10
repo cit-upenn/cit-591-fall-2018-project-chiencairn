@@ -34,8 +34,8 @@ public class Tester {
 			 */
 
 			DataAnalyzer da = new DataAnalyzer(crimes, litter, 39.952345, -75.164493);
-			System.out.println("This position crime rating: "+da.getCrimeRating());
-			System.out.println("This position litter rating: "+da.getLitterRating());
+//			System.out.println("This position crime rating: "+da.getCrimeRating());
+//			System.out.println("This position litter rating: "+da.getLitterRating());
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

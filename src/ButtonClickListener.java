@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import org.json.JSONException;
+//import org.json.JSONException;
 
 import com.teamdev.jxmaps.MapViewOptions;
 

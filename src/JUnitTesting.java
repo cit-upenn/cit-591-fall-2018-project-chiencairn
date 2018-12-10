@@ -1,47 +1,15 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import main.MyCustomString;
+import java.text.ParseException;
 
 public class JUnitTesting {
-	DataAnalyzer dataAnalyzer;
+	LitterParser litterParser;
 	
-	@BeforeEach
-	public void setUp() {
-		dataAnalyzer =new DataAnalyzer();
+	public void setUp() throws ParseException {
+		litterParser =new LitterParser("litter_index_survey.csv");
 	}
 	
 	//Test Purpose: tests basic functionality
-	@Test
-	public void replaceAllDigitsTest1() {
-		myCustomString.setMyString("Dog456Dog");
-		myCustomString.replaceAllDigits('X');
-		assertEquals("DogXXXDog", myCustomString.getMyString());	
+	public void testReadLitterFile() throws ParseException {
+		litterParser.readLitterFile();
+		assert(litterParser.getLitter().size() == 49474);	
 	}	
-	
-	//Test Purpose: tests String remains unchanged if String does not have digits
-	@Test
-	public void replaceAllDigitsTest2() {
-		myCustomString.setMyString("DogDog");
-		myCustomString.replaceAllDigits('X');
-		assertEquals("DogDog", myCustomString.getMyString());	
-	}	
-	
-	//Test Purpose: tests basic functionality
-	@Test
-	public void removeAllNonCharactersTest1() {
-		myCustomString.setMyString("dog456dog");
-		myCustomString.removeAllNonCharacters();
-		assertEquals("dogdog", myCustomString.getMyString());		
-	}
-		
-	@Test
-	public void removeTrailingNonCharactersTest1() {
-		
-		myCustomString.setMyString("Dog456Dog!");
-		myCustomString.removeTrailingNonCharacters();
-		assertEquals("Dog456Dog", myCustomString.getMyString());
-	}
 }

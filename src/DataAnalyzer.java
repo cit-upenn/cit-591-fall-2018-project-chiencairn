@@ -42,9 +42,9 @@ public class DataAnalyzer {
 				crimeTally++;
 			}
 		}
-		System.out.println("This position crime tally: "+crimeTally);
+//		System.out.println("This position crime tally: "+crimeTally);
 		double avgCrimeRate = crimes.size()/areaOfPhilly;
-		System.out.println("Average crime rate (crimes/m^2): "+avgCrimeRate);
+//		System.out.println("Average crime rate (crimes/m^2): "+avgCrimeRate);
 		crimeRating = 100 - 15*(crimeTally/avgCrimeRate);
 		return ((int)crimeRating);
 		
