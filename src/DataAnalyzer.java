@@ -46,7 +46,13 @@ public class DataAnalyzer {
 		double avgCrimeRate = crimes.size()/areaOfPhilly;
 //		System.out.println("Average crime rate (crimes/m^2): "+avgCrimeRate);
 		crimeRating = 100 - 15*(crimeTally/avgCrimeRate);
-		return ((int)crimeRating);
+		if(crimeRating > 100) {
+			return 100;
+		} else if(crimeRating < 0) {
+			return 0;
+		} else {
+			return (int) crimeRating;
+		}
 		
 	}
 	/**
@@ -67,7 +73,14 @@ public class DataAnalyzer {
 		double avgLitterRate = litter.size()/areaOfPhilly;
 		//System.out.println("Average litter rate (litter/m^2): "+avgLitterRate);
 		litterRating = 100 - 15*(litterTally/avgLitterRate);
-		return ((int)litterRating);
+		if(litterRating > 100) {
+			return 100;
+		} else if(litterRating < 0) {
+			return 0;
+		} else {
+			return (int) litterRating;
+		}
+		
 		
 	}
 }

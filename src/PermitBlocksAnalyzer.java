@@ -21,6 +21,8 @@ public class PermitBlocksAnalyzer {
 		parkingCount = parkingCount/1.5;
 		if(parkingCount > 100) {
 			return 100;
+		} else if(parkingCount < 0){
+			return 0;
 		} else {
 		return parkingCount;
 		}

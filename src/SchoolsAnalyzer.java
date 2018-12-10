@@ -28,7 +28,13 @@ public class SchoolsAnalyzer {
 		}
 		//System.out.println(quality + "|" + qualityCount + "|" + quantity);
 		double score = (quality/qualityCount)*.6 + (quantity/35)*100*.4;
-		return score;
+		if(score < 0) {
+			return 0.0;
+		} else if(score > 100) {
+			return 100.0;
+		} else {
+			return score;
+		}
 	}
 	
 	public boolean isClose(double threshold, double startLat, double startLong, double endLat, double endLong) {
