@@ -3,17 +3,33 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
-
+/**
+ * File Reader for School File. Combines two files of school dat
+ * @author michellechien
+ *
+ */
 public class SchoolReader {
 	
 	public String schoolFile;
 	public String schoolRankingFile;
 	
+	/**
+	 * Constructor for reader file.
+	 * @param schoolFile file name of schools
+	 * @param schoolRankingFile file name of school progress reports
+	 */
 	public SchoolReader (String schoolFile, String schoolRankingFile) {
 		this.schoolFile = schoolFile;
 		this.schoolRankingFile = schoolRankingFile;
 	}
 	
+	/**
+	 * Method to read in school blocks from file to an ArrayList of Schools.
+	 * Method reads in a second file of school scores for public schools updating
+	 * the existing school score.
+	 * @return
+	 * @throws FileNotFoundException
+	 */
 	public ArrayList<School> readSchoolFile() throws FileNotFoundException {
 		HashMap<Integer,School> schoolScores = new HashMap<Integer,School>();
 		ArrayList<School> schools = new ArrayList<School>();
