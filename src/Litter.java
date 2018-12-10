@@ -1,4 +1,8 @@
-
+/**
+ * The Litter class holds information for a single litter event which includes: Id and location.
+ * @author grahampitcairn
+ * @version 1.0 12-5-2018
+ */
 public class Litter {
 	
 	//Instance Variables
