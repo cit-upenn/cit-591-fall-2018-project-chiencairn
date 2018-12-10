@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-//import org.json.JSONException;
+import org.json.JSONException;
 
 import com.teamdev.jxmaps.MapViewOptions;
 
@@ -62,12 +62,14 @@ public class ButtonClickListener implements ActionListener {
 			lng = location.getLng();
 			lat = location.getLat();
 			
+			System.out.println(lat + "|" + lng);
+			
 			//reset map panel
 			MapViewOptions options = new MapViewOptions();
 	        options.importPlaces();
-	        options.setApiKey("AIzaSyB3QPLCnP2AMCvlwl8XMr4qJtpN1_-gbYs");
+	        options.setApiKey(GoogleAPIKey.key);
 	        Maps mapView = new Maps(options, lat, lng);
-	        mapView.setBounds(0, 0, 700, 500);
+	        mapView.setBounds(0, 0, 700, 650);
 	        panelMap.removeAll();
 	        panelMap.repaint();
 	        panelMap.revalidate();

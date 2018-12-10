@@ -24,14 +24,16 @@ public class Maps extends MapView {
                     // Getting the associated map object
                     final Map map = getMap();
                     
-                    map.setZoom(10.0);
+                    
                     
                     //Pull up MapView with Marker if coordinates are set valid
                     if (lat != 0 && lng != 0) {
+                    	map.setZoom(16.0);
             			map.setCenter(new LatLng(lat, lng));
             			Marker marker = new Marker(map);
                         marker.setPosition(map.getCenter());
             		} else {// if coordinates aren't valid, center map around generic philly location
+            			map.setZoom(12.0);
             			map.setCenter(new LatLng(39.952583, -75.165222));
             		}
                     
