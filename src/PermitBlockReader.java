@@ -41,7 +41,6 @@ public class PermitBlockReader {
 			blocks.add(currentBlock);
 		}
 		return blocks;
-	
 	}
 
 }
