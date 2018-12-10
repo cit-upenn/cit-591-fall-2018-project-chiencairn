@@ -42,7 +42,7 @@ public class SchoolsAnalyzer {
 			}	
 		}
 		double score = (quality/qualityCount)*.6 + (quantity/35)*100*.4;
-		if(score < 0) {
+		if(score < 0 || quantity == 0) {
 			return 0.0;
 		} else if(score > 100) {
 			return 100.0;
