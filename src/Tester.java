@@ -12,6 +12,7 @@ public class Tester {
 			ArrayList<Litter> litter = lit.getLitter();
 			ArrayList<Crime> crimes = crim.getCrimes();
 			
+			
 			/**
 			 * Print to test first 10 lines
 			 *
