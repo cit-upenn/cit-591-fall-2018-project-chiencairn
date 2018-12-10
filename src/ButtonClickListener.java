@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
@@ -6,9 +7,12 @@ import java.text.ParseException;
 import java.util.ArrayList;
 
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import org.json.JSONException;
+
+import com.teamdev.jxmaps.MapViewOptions;
 
 public class ButtonClickListener implements ActionListener {
 
@@ -27,9 +31,10 @@ public class ButtonClickListener implements ActionListener {
 	private int litterRating;
 	private int crimeRating;
 	private int overallRating;
+	JPanel panelMap;
 	
 	//create a constructor to change components in frame
-	ButtonClickListener(JLabel label, JTextField textField, JLabel overallLabel, JLabel schoolLabel, JLabel parkingLabel, JLabel litterLabel, JLabel crimeLabel) {
+	ButtonClickListener(JLabel label, JTextField textField, JLabel overallLabel, JLabel schoolLabel, JLabel parkingLabel, JLabel litterLabel, JLabel crimeLabel, JPanel panelMap) {
 		this.label=label;
 		this.overallLabel = overallLabel;
 		this.schoolLabel = schoolLabel;
@@ -39,6 +44,7 @@ public class ButtonClickListener implements ActionListener {
 		this.textField=textField;
 		this.overallLabel = overallLabel;
 		this.litterLabel = litterLabel;
+		this.panelMap = panelMap;
 	}
 
 	@Override
@@ -55,6 +61,20 @@ public class ButtonClickListener implements ActionListener {
 			GeocodeLocation location = geocoder.parseGeoCodeJSON(jsonResponse);
 			lng = location.getLng();
 			lat = location.getLat();
+			
+			//reset map panel
+			MapViewOptions options = new MapViewOptions();
+	        options.importPlaces();
+	        options.setApiKey("AIzaSyB3QPLCnP2AMCvlwl8XMr4qJtpN1_-gbYs");
+	        Maps mapView = new Maps(options, lat, lng);
+	        mapView.setBounds(0, 0, 700, 500);
+	        panelMap.removeAll();
+	        panelMap.repaint();
+	        panelMap.revalidate();
+	        panelMap.setLayout(null);
+			panelMap.add(mapView, BorderLayout.CENTER);
+
+	      	
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -119,6 +139,5 @@ public class ButtonClickListener implements ActionListener {
 		overallRating = (schoolRating+parkingRating+litterRating+crimeRating)/4;
 		overallLabel.setText("			Overall Rating 		= "+overallRating);
 	}	
-	
 	
 }

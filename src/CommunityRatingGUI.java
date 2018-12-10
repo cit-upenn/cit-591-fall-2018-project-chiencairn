@@ -40,10 +40,28 @@ public class CommunityRatingGUI {
 		
 		JTextField textField = new JTextField(10);
 		
-		
+		//create MapViewOptions with API key to create MapView 
+        MapViewOptions options = new MapViewOptions();
+        options.importPlaces();
+        options.setApiKey(GoogleAPIKey.key);
+        
+        //create MapView
+        Maps mapView = new Maps(options, 0, 0);
+        
+        //create JPanel for map and format
+        JPanel panelMap = new JPanel();
+        panelMap.setLayout(null);
+        panelMap.setBounds(0, 0, 500, 400);
+        mapView.setBounds(0, 0, 700, 500);
+		panelMap.add(mapView, BorderLayout.CENTER);
+      		
+      	//add panel to the frame
+        frame.add(panelMap, "East");
+      	frame.setVisible(true);	
+
 		//add a button
 		JButton button = new JButton("Rate my address!");
-		ButtonClickListener add = new ButtonClickListener(label, textField, overallLabel, schoolLabel, parkingLabel, litterLabel, crimeLabel);
+		ButtonClickListener add = new ButtonClickListener(label, textField, overallLabel, schoolLabel, parkingLabel, litterLabel, crimeLabel, panelMap);
 		button.addActionListener(add);
 		
 		//add the label and button components to the panel		
@@ -69,17 +87,10 @@ public class CommunityRatingGUI {
 		panel2.add(crimeLabel);
 
 		//add panel to the frame
-
 		frame.add(panel2, "Center");
 		frame.setVisible(true);	
 		
-		//create panel to eventually place on frame
-		JPanel panelMap = new JPanel();
-
-		//add panel to the frame
-		frame.add(panelMap, "East");
-		frame.setVisible(true);	
-
+		
 	}
 
 }
