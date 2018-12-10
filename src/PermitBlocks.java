@@ -1,4 +1,8 @@
-
+/**
+ * Class to hold information from Residential Permit Parking data
+ * @author michellechien
+ *
+ */
 public class PermitBlocks {
 	private String street;
 	private int district;
@@ -9,6 +13,12 @@ public class PermitBlocks {
 	private String geomMerc; 
 	private String geom;
 	
+	/**
+	 * Constructor
+	 * @param district district the parking zone belongs to
+	 * @param lat latitude
+	 * @param lng longitude
+	 */
 	public PermitBlocks(int district, double lat, double lng) {
 		this.street = "";
 		this.district = district;
@@ -72,6 +82,9 @@ public class PermitBlocks {
 		this.geom = geom;
 	}
 	
+	/**
+	 * Returns string representation of PermitBlocks
+	 */
 	public String toString() {
 		return district + "|" + street + "|" + lat + "|" + lng;
 	}

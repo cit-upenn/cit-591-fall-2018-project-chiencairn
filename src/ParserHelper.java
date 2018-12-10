@@ -1,43 +1,17 @@
-import java.util.Calendar;
 import java.util.Scanner;
 
+/**
+ * Class of helper functions to help parse School and Parking files
+ * @author michellechien
+ *
+ */
 public class ParserHelper {
-	/**
-	 * Formats the time as a string and processes them into the appropriate Calendar object for either
-	 * the trip or station. Method takes in a string representation of time, removes quotations if any, 
-	 * and splits the string into different parts by different delimeters that may be used.
-	 * If the resulting array has 6 elements, create and return a calendar object with date and time.
-	 * If the resulting array does not have 6 elements (probably 3), create and return a calendar
-	 * object with date.
-	 * @param time time as a String from file
-	 * @return time represented as a Calendar object
-	 */
-	public static Calendar processTime(String time) {
-		String timeString = trimQuotation(time);
-		String[] timeParts = timeString.split("/|-|:| ");
-		Calendar timeCal = Calendar.getInstance();
-		if (timeParts.length==6) {
-			timeCal.set(Integer.parseInt(timeParts[0]), Integer.parseInt(timeParts[1])-1, Integer.parseInt(timeParts[2]), Integer.parseInt(timeParts[3]), Integer.parseInt(timeParts[4]), Integer.parseInt(timeParts[5]));
-		} else {
-			timeCal.set(Integer.parseInt(timeParts[2]), Integer.parseInt(timeParts[0])-1, Integer.parseInt(timeParts[1]));
-		}
-		return timeCal;
-	}
 	
 	/**
-	 * Method processes coordinates from a string. If the coordinates from the file are empty ("")
-	 * set the coordinate to 0.0. Otherwise, parse the string to a double.
-	 * @param coordString string representation of coordinates
-	 * @return coordinate as a double
+	 * Method to processes integers. Initializes to -1 if no int.
+	 * @param intString
+	 * @return
 	 */
-	public static double processCoordinate(String coordString) {
-		Double coord = 0.0;
-		if (!coordString.equals("")) {
-			coord = Double.parseDouble(coordString);
-		}
-		return coord;
-	}
-	
 	public static int processInt(String intString) {
 		int num = -1;
 		if (!intString.equals("")) {
