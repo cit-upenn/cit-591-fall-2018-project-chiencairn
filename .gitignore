@@ -20,13 +20,14 @@ local.properties
 .externalToolBuilders/
 
 #Google API Key
-Google
+GoogleAPIKey.java
 
 #All .csv files
 *.csv
 
 #HelloWorld Example
 HelloWorld.java
+Maps.java
 
 #All .jar files
 *.jar

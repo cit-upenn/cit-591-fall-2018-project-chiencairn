@@ -1,5 +1,10 @@
 import java.util.Calendar;
 
+/**
+ * The Crime class holds information for a single crime event which includes: Id, offense, location, and date stamp.
+ * @author grahampitcairn
+ * @version 1.0 12-5-2018
+ */
 public class Crime {
 
 	//Instance Variables

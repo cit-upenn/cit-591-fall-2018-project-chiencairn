@@ -4,6 +4,12 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * The LitterParser class accepts a data file and reads in all pertinent information while 
+ * storing each event in an ArrayList of type Litter
+ * @author grahampitcairn
+ * @version 1.0 12-5-2018
+ */
 public class LitterParser {
 	//Instance Variables
 	File fileName;

@@ -8,6 +8,12 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
+/**
+ * The CrimeParser class accepts a data file and reads in all pertinent information while 
+ * storing each event in an ArrayList of type Crime
+ * @author grahampitcairn
+ * @version 1.0 12-5-2018
+ */
 public class CrimeParser {
 	//Instance Variables
 	File fileName;
