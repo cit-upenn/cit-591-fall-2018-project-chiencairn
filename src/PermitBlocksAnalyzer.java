@@ -59,4 +59,7 @@ public class PermitBlocksAnalyzer {
 		return (diffLat+diffLong)/2 < threshold;
 	}
 
+	public ArrayList<PermitBlocks> getPermitBlocks() {
+		return new ArrayList<PermitBlocks> (blocks);
+	}
 }

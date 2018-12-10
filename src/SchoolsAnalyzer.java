@@ -65,5 +65,12 @@ public class SchoolsAnalyzer {
 		double diffLong = Math.abs(startLong-endLong);
 		return (diffLat+diffLong)/2 < threshold;
 	}
-
+	
+	/**
+	 * Getter returns a copy of schools arraylist
+	 * @return schools ArrayList
+	 */
+	public ArrayList<School> getSchools() {
+		return new ArrayList<School> (schools);
+	}
 }
